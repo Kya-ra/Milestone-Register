@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Shifter CFlag Mux}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c| }
+\hline
+Case & S & Selection \\
+\hline
+A & S1 & LSB \\
+B & S2 & MSB \\
+\hline
+\end{tabular}
+\hfill \break \break
+The Shifter CFlag Mux matches the mode the shifter operates in to the relevant bit that should be assigned to the carry output, by just pulling it from the input value. In the event of S1 high and S2 high, the LSB and MSB will be OR'd together.
+\end{document}

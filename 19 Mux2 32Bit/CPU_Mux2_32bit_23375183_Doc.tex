@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\setlength\parindent{0pt}
+
+\title{2x32bit Mux}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Truth Table
+
+\begin{tabular}{ |c|c|c| }
+\hline
+S & Output \\
+\hline
+0 & $I_0$ \\
+1 & $I_1$ \\
+\hline
+\end{tabular}
+
+\hfill \break
+
+The output is equal to the value of the data input selected by S, and each individual bit in the vector may itself be 0 or 1 \newline
+The propagation delay is 6ns, from the 1 AND gate (to control if the signal is active), and the 1 OR gate (to combine which signal is active).
+
+\end{document}

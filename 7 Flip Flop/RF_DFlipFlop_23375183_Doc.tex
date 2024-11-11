@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{D Flip Flop}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Truth Table
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+Case & Reset & D & CLK & Q & Q'\\
+\hline
+A & 0 & 0 & $\uparrow$ & 0 & 1 \\
+B & 0 & 1 & $\uparrow$ & 1 & 0 \\
+C & 0 & 0 & $\rightarrow$ & Q & Q' \\
+D & 0 & 1 & $\rightarrow$ & Q & Q'\\
+R & 1 & D & $\uparrow$ & 0 & 1\\
+\hline
+\end{tabular}
+
+\hfill \break
+
+Q has 26ns propagation delay when latching and 39ns when unlatching. \newline
+Q' has 28ns delay when latching and 33ns when unlatching.
+Reset has a 9ns delay.
+
+\end{document}

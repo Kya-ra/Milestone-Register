@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{32/15bit Test Register File}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c| }
+\hline
+Case & Purpose & Expected Value \\
+\hline
+A & Load Q0 & 23375183 in Q0 \\
+B & Load Q1 & 23375184 in Q1\\
+C & Load Q2 & 23375185 in Q2\\
+D & Load Q3 & 23375186 in Q3\\
+E & Load Q4 & 23375187 in Q4\\
+F & Load Q5 & 23375188 in Q5\\
+G & Load Q6 & 23375189 in Q6\\
+H & Load Q7 & 23375190 in Q7\\
+I & Load Q8 & 23375191 in Q8\\
+J & Load Q9 & 23375192 in Q9\\
+K & Load Q10 & 23375193 in Q10\\
+L & Load Q11 & 23375194 in Q11\\
+M & Load Q12 & 23375195 in Q12\\
+N & Load Q13 & 23375196 in Q13\\
+O & Load Q14 & 23375197 in Q14\\
+P & Load Q15 & 23375198 in Q15\\
+Q & Load Q16 & 23375199 in Q16\\
+R & Load Q17 & 23375200 in Q17\\
+S & Load Q18 & 23375201 in Q18\\
+T & Load Q19 & 23375202 in Q19\\
+U & Load Q20 & 23375203 in Q20\\
+V & Load Q21 & 23375204 in Q21\\
+W & Load Q22 & 23375205 in Q22\\
+X & Load Q23 & 23375206 in Q23\\
+Y & Load Q24 & 23375207 in Q24\\
+Z & Load Q25 & 23375208 in Q25\\
+$\alpha$ & Load Q26 & 23375209 in Q26\\
+$\beta$ & Load Q27 & 23375210 in Q27\\
+$\gamma$ & Load Q28 & 23375211 in Q28\\
+$\delta$ & Load Q29 & 23375212 in Q29\\
+\hline
+\end{tabular}
+\begin{tabular}{ |c|c|c| }
+\hline
+Case & Purpose & Expected Value \\
+\hline
+$\epsilon$ & Load Q30 & 23375213 in Q30\\
+$\zeta$ & Load Q31 & 23375213 in Q31\\
+$\eta$ & Load QT1 & 23375214 in QT1\\
+$\theta$ & Load QT2 & 23375215 in QT2\\
+$\iota$ & Load QT3 & 23375216 in QT3\\
+$\kappa$ & Load QT4 & 23375217 in QT4\\
+$\lambda$ & Load QT5 & 23375218 in QT5\\
+$\mu$ & Load QT6 & 23375219 in QT6\\
+$\nu$ & Load QT7 & 23375220 in QT7\\
+$\xi$ & Load QT8 & 23375221 in QT8\\
+o & Load QT9 & 23375222 in QT9\\
+$\pi$ & Load QT10 & 23375223 in QT10\\
+$\rho$ & Load QT11 & 23375224 in QT11\\
+$\sigma$ & Load QT12 & 23375225 in QT12\\
+$\varsigma$ & Load QT13 & 23375226 in QT13\\
+$\tau$ & Load QT14 & 23375227 in QT14\\
+$\upsilon$ & Load QT15 & 23375228 in QT15\\
+& Port A: & \\
+$\phi$ & Write 0 to 11 & 23375183 in Q11 \\
+$\chi$ & Write 11 to T1 & 23375183 in QT1 \\
+$\psi$ & Write T1 to T11 & 23375183 in QT11 \\
+$\omega$ & Write T11 to 1 & 23375183 in Q1 \\
+& Port B: & \\
+Б & Write 0 to 22 & 23375183 in Q22 \\
+Г & Write 22 to T2 & 23375183 in QT2 \\
+Д & Write T2 to T12 & 23375183 in QT12 \\
+Є & Write T12 to 2 & 23375183 in Q2 \\
+& Register Signals & \\
+Ж & Check RW & No Change \\
+З & Reset & All 0 \\
+\hline
+\end{tabular}
+
+
+\newpage
+
+\author{Kyara McWilliam 23375183}
+\hfill \break \break
+Cases A through $\upsilon$ cover loading data into each individual register, which have a delay of 93ns. 8ns from the decoder, 77ns from the registers and 8ns from the 2 and gates between the decoder and the registers.
+\hfill \break \break
+Cases $\phi$ through Є handle register transfer operations on both ports of the Test Register File, testing writing permanent to permanent, permanent to temporary, temporary to temporary and temporary to permanent. These take 8-16ns for the mux to be set (depending on the case), then an additional 93ns for writing to a register as above.
+\hfill \break
+A\_B\_DataIN\_Test has to be set to 0 for port A and 1 for port B.\hfill \break
+SA/SB have to be set to 00000 (0), 01011 (11) or 10110 (22) as appropriate. \hfill \break
+TA/TB have to be set to 0000 (passthrough), 0001 (1), 0010 (2), 1011 (11) or 1100 (12) as appropriate. \hfill \break
+DR has to be set to 00001 (1), 00010 (2), 01011 (11) or 10110 (22) as appropriate. \hfill \break 
+TD has to be set to 0000 (write to permanent registers), 0001 (1), 0010 (2), 1011 (11) or 1100 (12) as appropriate.
+\hfill \break \break
+Case Ж handles checking the RW pin, by setting data input to 0 but disabling the ability to write. No element should change, so there is no measurable delay.
+\hfill \break \break
+Case З handles the reset pin, which overrides everything to just clear it out and set to 0. This takes 9ns after clock signal, as it directly affects the flip flops inside the registers.
+
+\end{document}

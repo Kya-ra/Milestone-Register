@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Functional Unit}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+Case & FS4 (Bin) & FS4 & Result & NCZV & Meaning \\
+\hline
+A & 00100 & 4 & 4294967292 & 1000 & A + 1sC B \\
+B & 01010 & 10 & 23375199 & 0000 & A OR B \\
+C & 00011 & 3 & 46750370 & 0000 & A + B + 1 \\
+D & 01100 & 12 & 29 & 0000 & A XOR B \\
+E & 00010 & 2 & 46750369 & 0000 & A + B \\
+F & 11000 & 24 & 46750372 & 0000 & slB \\
+G & 00000 & 0 & 23375183 & 0000 & A \\
+H & 10000 & 16 & 23375186 & 0000 & B \\
+I & 00001 & 1 & 23375183 & 0000 & A + 1 \\
+J & 00101 & 5 & 4294967293 & 1000 & A + 1sC B + 1 \\
+K & 00110 & 6 & 23375182 & 0100 & A - 1 \\
+M & 01110 & 14 & 4271592112 & 1100 & NOT A \\
+N & 01000 & 8 & 23375170 & 0000 & A AND B \\
+O & 10100 & 20 & 11687593 & 0000 & srB \\
+P & 00111 & 7 & 23375183 & 0100 & A - 1 + 1\\
+\hline
+\multicolumn{6}{|c|}{Test Case L was omitted}\\
+\hline
+\end{tabular}
+\hfill \break \break
+The testbench implements the order of test cases for a student number ending in a 3, with the operations being applied to 23375183 in register A, and 23375186 in register B.
+\hfill \break \break
+FS4 is composed of 5 signals; S3, S2, S1, S0 and C, from most to least significant respectively. S3 high signals a shift, S2 high signals a logical operation (OR, XOR, AND, NOT / 1sC). S3 and S2 both high is a shift operation under S3, while S3 and S2 low signals an arithmetic operation. The precise operation being conducted within the modes is in turn defined by S1 and S0, with C being used in arithmetic mode to add 1.
+\hfill \break \break
+This results in a total potential number of operations of 15, with 8 from the permutations of S1, S0 and C, 4 from the permutations of S2 high, S1 and S0, and 3 from S3 and the combinations of S2/S1, with S3 and S2 and S1 being undefined.
+\end{document}

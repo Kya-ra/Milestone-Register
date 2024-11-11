@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Ripple Carry Adder}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c|c|c| }
+\hline
+Case & A & B & C & Result & CV & Note \\
+\hline
+A & ffff0000 & 0000ffff & 1 & 0 & 10 & Worst Case Delay \\
+B & 80000000 & FFFFFFFF & 0 & 2147483647 & 11 & Neg Neg Overflow \\
+C & FFFFFFE0 & FFFFFFF0 & 0 & 4294967248 & 10 & Neg Neg \\
+& Pos & Neg & & Impossible & x1 & Pos Neg Overflow\\
+D & 00000010 & FFFFFFF0 & 0 & 0 & 10 & Pos Neg \\
+E & 7FFFFFFF & 00000001 & 0 & 2147483648 & 01 & Pos Pos Overflow \\
+F & 00000010 & 00000020 & 0 & 48 & 00 & Pos Pos \\
+G & 0164AD4F & 7FFFFFFF & 0 & 2170858830 & 01 & Student ID Overflow \\
+H & 0164AD4F & FFFFFFFF & 0 & 23375182 & 10 & Student ID Carry \\
+\hline
+\end{tabular}
+\hfill \break \break
+The testbench cannot test every possible combination with the ripple adder, so it tests a few select cases. These include the worst case delay (FFFFFFFF + Carry), a negative plus a negative (with and without overflow), a positive plus a negative without overflow, and a positive plus a positive (with and without overflow). Then there are 2 cases demonstrating what number can be added to my student ID to cause an overflow and a carry respectively.
+\hfill \break \break
+The propagation delay of the ripple carry adder in the worst case is 202ns. The calculation comes from 1 XOR gate (8ns), and 32 AND and 32 OR gates (4ns and 2ns respectively). Many computations are faster, but this requires a minimum period of 250ns, or 4000Hz to remain divisible into a second.
+\end{document}

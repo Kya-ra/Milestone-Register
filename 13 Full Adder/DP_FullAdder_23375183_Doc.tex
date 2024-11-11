@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Single Bit Full Adder}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+Case & A & B & C In & Sum & C Out \\
+\hline
+A & 0 & 0 & 0 & 0 & 0 \\
+B & 0 & 1 & 0 & 1 & 0 \\
+C & 1 & 0 & 0 & 1 & 0 \\
+D & 1 & 1 & 0 & 0 & 1 \\
+A & 0 & 0 & 1 & 1 & 0 \\
+B & 0 & 1 & 1 & 0 & 1 \\
+C & 1 & 0 & 1 & 0 & 1 \\
+D & 1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\hfill \break \break
+The Single Bit Full Adder quite simply calculates A + B + C In and outputs a 2 bit binary value accordingly, where the more significant bit means \hfill \break C Out, and the less significant bit is Sum. The Full Adder is agnostic to which value is A and which is B.
+\end{document}

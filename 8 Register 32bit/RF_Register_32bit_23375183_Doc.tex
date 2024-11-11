@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{32bit Register}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Truth Table (per Flip Flop)
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+Reset & D & CLK & Q & Q'\\
+\hline
+0 & 0 & $\uparrow$ & 0 & 1 \\
+0 & 1 & $\uparrow$ & 1 & 0 \\
+0 & 0 & $\rightarrow$ & Q & Q' \\
+0 & 1 & $\rightarrow$ & Q & Q'\\
+1 & D & $\uparrow$ & 0 & 0\\
+\hline
+\end{tabular}
+
+\hfill \break \break
+The Q value of the register takes 68ns, while the Q' value (not used in the wider Register file) takes 77ns (see TD02). \newline
+Test Case A has Q = 23375183, while Test Case A' has Q' = 23375183.
+
+
+\end{document}

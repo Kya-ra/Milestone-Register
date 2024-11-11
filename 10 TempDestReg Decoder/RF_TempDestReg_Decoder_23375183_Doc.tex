@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{16bit Temp Decoder}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Output Table
+\hfill \break
+
+\begin{tabular}{ |c|c|c| }
+\hline
+Test Case & Input Signal & Output Pin \\
+\hline
+A & 0000 & Q0 \\
+B & 0001 & Q1 \\
+C & 0010 & Q2 \\ 
+... & ... & ...\\
+N & 1101 & Q13 \\
+O & 1110 & Q14 \\
+P & 1111 & Q15 \\
+\hline
+\end{tabular}
+
+\hfill \break
+
+Test cases C through M continue the pattern above. The propagation delay of the decoder is caused by the series of AND gates the signal travels through, and varies from a low of 4ns to a high of 16ns, for the worst case 3 AND gates (4ns) and 1 NOT gate (4ns) 
+
+\end{document}

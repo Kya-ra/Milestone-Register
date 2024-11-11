@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Single Bit Logic Circuit}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c|c| }
+\hline
+Case & A & B & S0 & S1 & Operation & G \\
+\hline
+Aa & 0 & 0 & 0 & 0 & AND & 0 \\
+Ao & 0 & 0 & 1 & 0 & OR & 0 \\
+Ax & 0 & 0 & 0 & 1 & XOR & 0 \\
+An & 0 & 0 & 1 & 1 & NOT & 1 \\
+Ba & 0 & 1 & 0 & 0 & AND & 0 \\
+Bo & 0 & 1 & 1 & 0 & OR & 1 \\
+Bx & 0 & 1 & 0 & 1 & XOR & 1 \\
+Bn & 0 & 1 & 1 & 1 & NOT & 1 \\
+Ca & 1 & 0 & 0 & 0 & AND & 0 \\
+Co & 1 & 0 & 1 & 0 & OR & 1 \\
+Cx & 1 & 0 & 0 & 1 & XOR & 1 \\
+Cn & 1 & 0 & 1 & 1 & NOT & 0 \\
+Da & 1 & 1 & 0 & 0 & AND & 1 \\
+Do & 1 & 1 & 1 & 0 & OR & 1 \\
+Dx & 1 & 1 & 0 & 1 & XOR & 0 \\
+Dn & 1 & 1 & 1 & 1 & NOT & 0 \\
+\hline
+\end{tabular}
+\hfill \break \break
+The testbench implements 4 logical operations (AND, OR, XOR and NOT), selected based on the values of S0 and S1. The propagation delay for the different operations is not identical (with NOT being the shortest, and XOR the longest) which can cause some short blips of a signal being inappropriately on or off.
+\hfill \break
+NB: NOT only affects the A value
+\end{document}

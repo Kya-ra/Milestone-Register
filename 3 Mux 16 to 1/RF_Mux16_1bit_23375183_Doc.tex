@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\setlength\parindent{0pt}
+
+\title{16x1bit Mux}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Truth Table
+
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$S_3$ & $S_2$ & $S_1$ & $S_0$ & Output \\
+\hline
+0 & 0 & 0 & 0 & $D_0$ \\
+0 & 0 & 0 & 1 & $D_1$ \\
+0 & 0 & 1 & 0 & $D_2$ \\
+0 & 0 & 1 & 1 & $D_3$ \\
+0 & 1 & 0 & 0 & $D_4$ \\
+0 & 1 & 0 & 1 & $D_5$ \\
+0 & 1 & 1 & 0 & $D_6$ \\
+0 & 1 & 1 & 1 & $D_7$ \\
+1 & 0 & 0 & 0 & $D_8$ \\
+1 & 0 & 0 & 1 & $D_9$ \\
+1 & 0 & 1 & 0 & $D_{10}$ \\
+1 & 0 & 1 & 1 & $D_{11}$ \\
+1 & 1 & 0 & 0 & $D_{12}$ \\
+1 & 1 & 0 & 1 & $D_{13}$ \\
+1 & 1 & 1 & 0 & $D_{14}$ \\
+1 & 1 & 1 & 1 & $D_{15}$ \\
+\hline
+\end{tabular}
+\hfill \break
+
+The output is equal to the value of the data input selected by $S_0, S_1, S_2$ and $S_3$, and each individual data line may itself be 0 or 1 \newline
+Due to the design of the mux, the propagation delay will be a constant 4 AND Gates \& 4 OR gates, or 24ns.
+
+\end{document}

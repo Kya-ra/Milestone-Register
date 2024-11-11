@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Shifter}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Example Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+Case & S1 & S2 & Input & Output & C \\
+\hline
+A & 0 & 0 & 23375183 & 23375183 & 0 \\
+B & 1 & 0 & 23375183 & 11687591 & 1 \\
+C & 0 & 1 & 23375183 & 46750366 & 0 \\
+D & 0 & 1 & 3221225472 & 2147483648 & 1 \\
+E & 1 & 0 & 3 & 1 & 0 \\
+\hline
+\multicolumn{6}{|c|}{Cases D and E exhibit carry set/unset}\\
+\hline
+\end{tabular}
+\hfill \break \break
+The shifter will shift bits right or left, equivalent to $\div$2 and $\times$2 respectively. Any bit pushed off the end (e.g. the '1' component making up the 3 in my student number) will be set as the carry bit, and the output will be truncated.
+\end{document}

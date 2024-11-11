@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{32 Bit B Logic}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c| }
+\hline
+Cases & S0 & S1 & Output \\
+\hline
+A & 0 & 0 & 0 \\
+B & 0 & 1 & B \\
+C & 1 & 0 & B' \\
+D & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\hfill \break \break
+The 32 Bit B Logic instantiates 32 Single Bit B Logics, but uses a vector for the B value unlike a standard mux. This means that the input vector merely selects the value in the mux, and $S_0$ and $S_1$ can still be set to different values, creating an easy NOT value.
+\end{document}

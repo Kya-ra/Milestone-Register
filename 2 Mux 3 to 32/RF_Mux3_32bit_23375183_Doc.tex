@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\setlength\parindent{0pt}
+
+\title{3x32bit Mux}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Truth Table
+
+
+\begin{tabular}{ |c|c|c| }
+\hline
+$S_0$ & $S_1$ & Output \\
+\hline
+0 & 0 & $D_0$ \\
+0 & 1 & $D_1$ \\
+1 & 0 & $D_2$ \\ 
+1 & 1 & Unused \\
+\hline
+\end{tabular}
+
+\hfill \break
+
+The output is equal to the value of the data input selected by $S_0, S_1$ and $S_2$, and each individual data line may store any 32bit value \newline
+The propagation delay varies in each 1bit mux from 6 to 16ns, depending on the precise combination of gates, from a minimum of 1 AND, 1 OR gate to a maximum of 3 AND, 2 OR gates.
+
+\end{document}

@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Datapath}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\begin{tabular}{ |c|c|c| }
+\hline
+Case & Purpose & Expected Value \\
+\hline
+A & Load Q0 & 23375183 in Q0 \\
+B & Load Q1 & 23375182 in Q1\\
+C & Load Q2 & 23375181 in Q2\\
+D & Load Q3 & 23375180 in Q3\\
+E & Load Q4 & 23375179 in Q4\\
+F & Load Q5 & 23375178 in Q5\\
+G & Load Q6 & 23375177 in Q6\\
+H & Load Q7 & 23375176 in Q7\\
+I & Load Q8 & 23375175 in Q8\\
+J & Load Q9 & 23375174 in Q9\\
+K & Load Q10 & 23375173 in Q10\\
+L & Load Q11 & 23375172 in Q11\\
+M & Load Q12 & 23375171 in Q12\\
+N & Load Q13 & 23375170 in Q13\\
+O & Load Q14 & 23375169 in Q14\\
+P & Load Q15 & 23375168 in Q15\\
+Q & Load Q16 & 23375167 in Q16\\
+R & Load Q17 & 23375166 in Q17\\
+S & Load Q18 & 23375165 in Q18\\
+T & Load Q19 & 23375164 in Q19\\
+U & Load Q20 & 23375163 in Q20\\
+V & Load Q21 & 23375162 in Q21\\
+W & Load Q22 & 23375161 in Q22\\
+X & Load Q23 & 23375160 in Q23\\
+Y & Load Q24 & 23375159 in Q24\\
+Z & Load Q25 & 23375158 in Q25\\
+$\alpha$ & Load Q26 & 23375157 in Q26\\
+$\beta$ & Load Q27 & 23375156 in Q27\\
+$\gamma$ & Load Q28 & 23375155 in Q28\\
+$\delta$ & Load Q29 & 23375154 in Q29\\
+$\epsilon$ & Load Q30 & 23375153 in Q30\\
+$\zeta$ & Load Q31 & 23375152 in Q31\\
+$\eta$ & Load QT1 & 23375151 in QT1\\
+$\theta$ & Load QT2 & 23375150 in QT2\\
+$\iota$ & Load QT3 & 23375149 in QT3\\
+$\kappa$ & Load QT4 & 23375148 in QT4\\
+$\lambda$ & Load QT5 & 23375147 in QT5\\
+\hline
+\end{tabular}
+\begin{tabular}{ |c|c|c| }
+\hline
+Case & Purpose & Expected Value \\
+\hline
+$\mu$ & Load QT6 & 23375146 in QT6\\
+$\nu$ & Load QT7 & 23375145 in QT7\\
+$\xi$ & Load QT8 & 23375144 in QT8\\
+o & Load QT9 & 23375143 in QT9\\
+$\pi$ & Load QT10 & 23375142 in QT10\\
+$\rho$ & Load QT11 & 23375141 in QT11\\
+$\sigma$ & Load QT12 & 23375140 in QT12\\
+$\varsigma$ & Load QT13 & 23375139 in QT13\\
+$\tau$ & Load QT14 & 23375138 in QT14\\
+$\upsilon$ & Load QT15 & 23375137 in QT15\\
+$\phi$ & Check RW & No Change \\
+$\chi$ & A + 1sC B & 4026531849 in Q3 \\
+$\psi$ & A OR B & 23375231 in Q3 \\
+$\omega$ & A + B + 1 & 46750341 in Q3 \\
+© & A XOR B & 122 in Q3 \\
+ß & A + B & 46750340 in Q3 \\
+æ & slB & 46750330 in Q3 \\
+! & A (FS 00000) & 23375175 in Q3 \\
+@ & B & 23375165 in Q3 \\
+£ & A + 1 & 23375176 in Q3 \\
+€ & A + 1sC B + 1 & 4026531850 in Q3 \\
+Б & A - 1 & 23375174 in Q3 \\
+Г & 1sC A & 4271592120 in Q3 \\
+Д & A AND B & 23375109 in Q3 \\
+Є & srB & 11687582 in Q3 \\
+Ж & A (FS 00111) & 23375175 in Q3 \\
+З & A + 1sc B & 4294967287 in Q3 \\
+И & A OR B & 23375183 in Q3 \\
+Љ & A + B + 1 & 46750359 in Q3 \\
+Њ & A XOR B & 8 in Q3 \\
+Ћ & A + B & 46750358 in Q3 \\
+Ч & slB & 46750366 in Q3 \\
+Ш & B & 23375183 in Q3 \\
+Ъ & A + 1sc B + 1 & 4294967288 in Q3 \\
+Ы & A AND B & 23375175 in Q3 \\
+Ю & SrB & 11687591 in Q3 \\
+Я & Reset & 0 in Q0 - QT15 \\
+\hline
+\end{tabular}
+\\
+
+\newpage
+\maketitle
+TD01a covers register loading operations, cases A through $\phi$ \\
+TD01b covers functional unit operations with source register output B, cases $\chi$ through Ж \\
+TD01c covers functional unit operations with IR\_IN and the reset, cases З through Я \\
+\\
+The testbench implements the order of test cases for a student number ending in a 3. First, using Q8 + Q18 as sources, then using Q8 + IR\_IN. As the outputs are specified, output of the circuit is shown on Q3.\\
+This means operations are performed on 23375175 (SID - 8) and 23375183 [B]. \\
+For IR\_IN, only operations involving the value B are used\\ 
+The worst case propagation delay is 202ns, so the period used is 250ns (equivalent to a 4MHz processor)\\ \\
+Cases A through $\upsilon$ handle loading the registers, then $\phi$ tests the RW function. $\chi$ through Ю test the functional unit, then Я tests the reset function.\\ \\
+FS is composed of 5 signals; S3, S2, S1, S0 and C, from most to least significant respectively. S3 high signals a shift, S2 high signals a logical operation (OR, XOR, AND, NOT / 1sC). S3 and S2 both high is a shift operation under S3, while S3 and S2 low signals an arithmetic operation. The precise operation being conducted within the modes is in turn defined by S1 and S0, with C being used in arithmetic mode to add 1.
+
+\end{document}

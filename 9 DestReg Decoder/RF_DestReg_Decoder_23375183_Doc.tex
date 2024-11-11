@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{32bit Decoder}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Output Table
+\hfill \break
+
+\begin{tabular}{ |c|c|c| }
+\hline
+Test Case & Input Signal & Output Pin \\
+\hline
+A & 00000 & Q0 \\
+B & 00001 & Q1 \\
+C & 00010 & Q2 \\ 
+... & ... & ...\\
+$\delta$ & 11101 & Q29 \\
+$\epsilon$ & 11110 & Q30 \\
+$\zeta$ & 11111 & Q31 \\
+\hline
+\end{tabular}
+
+\hfill \break
+
+Test cases D through $\gamma$ continue the pattern above. The propagation delay of the decoder is caused by the series of AND gates the signal travels through, and varies from a low of 4ns to a high of 20ns, for the worst case 4 AND gates (4ns) and 1 NOT gate (4ns) 
+
+\end{document}

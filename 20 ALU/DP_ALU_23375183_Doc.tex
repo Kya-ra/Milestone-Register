@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}  % For Cyrillic font encoding
+\usepackage[utf8]{inputenc}  % For UTF-8 input encoding
+
+\title{Arithmetic Logic Unit (ALU)}
+\author{Kyara McWilliam 23375183}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Test Cases
+\hfill \break
+
+\begin{tabular}{ |c|c|c|c|c|c|c|c| }
+\hline
+Case & C & S0 & S1 & S2 & Result & CV & Meaning \\
+\hline
+A & 0 & 0 & 0 & 0 & 23375183 & 00 & A \\
+B & 1 & 0 & 0 & 0 & 23375184 & 00 & A + 1 \\
+C & 0 & 1 & 0 & 0 & 23440718 & 00 & A + B \\
+D & 1 & 1 & 0 & 0 & 23440719 & 00 & A + B + 1 \\
+E & 0 & 0 & 1 & 0 & 23309647 & 10 & A + 1sC B \\
+F & 1 & 0 & 1 & 0 & 23309648 & 10 & A + 1sC B + 1 \\
+G & 0 & 1 & 1 & 0 & 23375182 & 10 & A - 1 \\
+H & 1 & 1 & 1 & 0 & 23375183 & 10 & A - 1 + 1 \\
+I & 0 & 0 & 0 & 1 & 44367 & 00 & A AND B \\
+J & 0 & 1 & 0 & 1 & 23396351 & 00 & A OR B \\
+K & 0 & 0 & 1 & 1 & 23351984 & 10 & A XOR B \\
+L & 0 & 1 & 1 & 1 & 4271592112 & 10 & NOT A \\
+\hline
+\end{tabular}
+\hfill \break \break
+The testbench implements every ALU operation, using the value 23375183 in A and the value 65535 in B. 
+\hfill \break \break
+S2 high signals a logical operation (OR, XOR, AND, NOT / 1sC),  while S2 low signals an arithmetic operation. The precise operation being conducted within the modes is in turn defined by S1 and S0, with C being used in arithmetic mode to add 1.
+\hfill \break \break
+This results in a total potential number of operations of 12, with 8 from the permutations of S2 low, S1, S0 and C and 4 from the permutations of S2 high, S1 and S0. Any use of C in logical operations has no defined effect on the result.
+\end{document}
